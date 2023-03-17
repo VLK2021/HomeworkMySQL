@@ -1,0 +1,38 @@
+show databases;
+
+create database db_my_first;
+
+use db_my_first;
+show tables;
+
+create table users(
+id int not null auto_increment,
+name varchar(20) not null,
+age int not null,
+gender varchar(6) not null,
+primary key (id)
+);
+
+select * from users;
+
+insert into users values(null, 'pavlo', 42, 'male');
+insert into users values(null, 'anya', 12, 'famale');
+
+select id, name, gender from users;
+
+select * from users where name='Artem';
+select * from users where name!='Artem';
+select * from users where name<>'Artem';
+
+ select * from users where name like '%a';
+ select * from users where name like '%ta%';
+ select * from users where name like '_a%';
+
+
+
+
+
+
+
+
+
