@@ -28,6 +28,38 @@ select * from users where name<>'Artem';
  select * from users where name like '%ta%';
  select * from users where name like '_a%';
 
+ select * from users where age between 20 and 30;
+  select * from users where age>=20 and age<=30;
+  select * from users where age between 20 and 30 or name='ivan';
+
+  select * from users where age in (20,30,17,25);
+
+  select * from users where length(name)>5;
+
+  select * from users order by age asc;
+  select * from users order by age desc;
+  select * from users order by name desc;
+
+ select * from users limit 2;
+ select * from users limit 2 offset 2;
+
+select * from users order by age desc limit 1;
+
+//агрегатки: min, max, avg, count, sum//////////////////////////
+select min(age) as min_age from users;
+ select max(age) as max_age from users;
+
+ select max(age), gender as max_age from users group by gender;
+ select count(id), gender as count from users group by gender;
+ select avg(age), gender as count from users group by gender;
+
+ select sum(id) from users;
+ select sum(age) from users;
+ ///////////////////////////////////////////////////////////////
+
+ update users set name='ananas' where id=3;
+  delete from users where id=3;
+
 
 
 
