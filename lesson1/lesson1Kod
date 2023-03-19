@@ -43,11 +43,16 @@ select * from users where name<>'Artem';
  select * from users limit 2;
  select * from users limit 2 offset 2;
 
+ update cars set model='tavria' where year=2020 limit 10;
+
+
 select * from users order by age desc limit 1;
 
-//агрегатки: min, max, avg, count, sum//////////////////////////
+//агрегатки: min, max, avg, count, sum, distinct//////////////////////////
 select min(age) as min_age from users;
  select max(age) as max_age from users;
+
+ select distinct model from cars;
 
  select max(age), gender as max_age from users group by gender;
  select count(id), gender as count from users group by gender;
